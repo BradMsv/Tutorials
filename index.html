@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tutorial 1 - Positions and Backgrounds</title>
+		
+		<style>
+		
+			#myBG {
+			
+				position:fixed;
+				left: 0px;
+				top: 0px;
+				width: 100%;
+				height: 100%;
+				object-position: center;
+				object-fit: cover;
+				
+			}
+			
+			#controls {
+			
+				position: absolute;
+				left: 0px;
+				top: 10%;
+			
+			}
+			
+			#img1 {
+			
+				background-image: url(imgs/1.gif);
+				transition: all 0.5s;
+			
+			}
+			
+			#img2 {
+			
+				left:30px;
+				background-image: url(imgs/2.gif);
+				transition: all 0.5s;
+			
+			}
+			
+			#img3 {
+			
+				left:30px;
+				background-image: url(imgs/3.gif);
+				transition: all 0.5s;
+			
+			}
+			
+			#img4 {
+			
+				background-image: url(imgs/4.gif);
+				transition: all 0.5s;
+			
+			}
+			
+			.thumbs {
+			
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: relative;
+				margin: 30px;
+				border: 3px solid white;
+				border-radius: 100px;
+				background-size: cover;
+				background-position: center;
+				opacity: 0.5;
+			
+			}
+			
+			#img1:hover {
+			
+				zoom: 1;
+				filter: alpha(opacity=50);
+				opacity: 1;
+				transform: scale(1.15);
+			
+			}
+			
+			#img2:hover {
+			
+				zoom: 1;
+				filter: alpha(opacity=50);
+				opacity: 1;
+				transform: scale(1.15);
+			
+			}
+			
+			#img3:hover {
+			
+				zoom: 1;
+				filter: alpha(opacity=50);
+				opacity: 1;
+				transform: scale(1.15);
+			
+			}
+			
+			#img4:hover {
+			
+				zoom: 1;
+				filter: alpha(opacity=50);
+				opacity: 1;
+				transform: scale(1.15);
+			
+			}
+			
+			#info {
+			
+				opacity: 0;
+				position: absolute;
+				right: 10%;
+				top: 0px;
+				bottom: 0px;
+				margin: auto;
+				height: 50%;
+				width: 50%;
+				background-color: rgba(200, 200, 200, 0.5);
+				transition: all 0.5s;
+			
+			}
+			
+			#infoimg {
+			
+				width: 100%;
+				height: 80%;
+				transition: all 0.5s;
+			
+			}
+			
+			#infotext {
+			
+				width: 100%;
+				height: 20%;
+				transition: all 0.5s;
+				padding: 10px;
+				text-align: center;
+				font-family: "TimesNewRoman";
+				font-size: 20pt;
+			}
+			
+			#close {
+			
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background-color: rgba(0, 0 , 0 , 0.5);
+				color: white;
+				left: 0px;
+				top: 0px;
+				padding: 5px;
+				text-align: center;
+				cursor: default;
+			
+			}
+			
+		
+		</style>
+		
+	</head>
+	
+	<body>
+	
+		<video id="myBG" autoplay loop>
+			<source src="imgs/bg.mp4" />
+		</video>
+	
+		<div id="controls">
+			
+			<div id="img1" class="thumbs"></div>
+			<div id="img2" class="thumbs"></div>
+			<div id="img3" class="thumbs"></div>
+			<div id="img4" class="thumbs"></div>
+			
+		</div>
+		
+		<div id="info">
+		
+			<div id="infoimg"></div>
+			<div id="infotext"></div>
+			<div id="close">X</div>
+		
+		</div>
+		
+		<script>
+		
+			document.getElementById("img1").addEventListener("click", function(){
+			
+				document.getElementById("infoimg").style.backgroundImage = "url(imgs/1.gif)";
+				document.getElementById("infoimg").style.backgroundSize = "contain";
+				document.getElementById("infoimg").style.backgroundRepeat = "no-repeat";
+				document.getElementById("infoimg").style.backgroundPosition = "center center";
+				document.getElementById("info").style.opacity = 1;
+				document.getElementById("infotext").innerHTML = "Rainbow Sphere Spiral";
+				document.getElementById("close").style.cursor = "pointer";
+			
+			});
+			
+			document.getElementById("img2").addEventListener("click", function(){
+			
+				document.getElementById("infoimg").style.backgroundImage = "url(imgs/2.gif)";
+				document.getElementById("infoimg").style.backgroundSize = "contain";
+				document.getElementById("infoimg").style.backgroundRepeat = "no-repeat";
+				document.getElementById("infoimg").style.backgroundPosition = "center center";
+				document.getElementById("info").style.opacity = 1;
+				document.getElementById("infotext").innerHTML = "Waves";
+				document.getElementById("close").style.cursor = "pointer";
+
+			
+			});
+			
+			document.getElementById("img3").addEventListener("click", function(){
+			
+				document.getElementById("infoimg").style.backgroundImage = "url(imgs/3.gif)";
+				document.getElementById("infoimg").style.backgroundSize = "contain";
+				document.getElementById("infoimg").style.backgroundRepeat = "no-repeat";
+				document.getElementById("infoimg").style.backgroundPosition = "center center";
+				document.getElementById("info").style.opacity = 1;
+				document.getElementById("infotext").innerHTML = "Another Rainbow Spiral";
+				document.getElementById("close").style.cursor = "pointer";
+			
+			});
+			
+			document.getElementById("img4").addEventListener("click", function(){
+			
+				document.getElementById("infoimg").style.backgroundImage = "url(imgs/4.gif)";
+				document.getElementById("infoimg").style.backgroundSize = "contain";
+				document.getElementById("infoimg").style.backgroundRepeat = "no-repeat";
+				document.getElementById("infoimg").style.backgroundPosition = "center center";
+				document.getElementById("info").style.opacity = 1;
+				document.getElementById("infotext").innerHTML = "Green Spherical Hologram";
+				document.getElementById("close").style.cursor = "pointer";
+			
+			});
+			
+			document.getElementById("close").addEventListener("click", function(){
+			
+				document.getElementById("info").style.opacity = 0;
+				document.getElementById("close").style.cursor = "default";
+			
+			});
+		
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
